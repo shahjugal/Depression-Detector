@@ -16,7 +16,7 @@ from pgmpy.inference import VariableElimination
 
 def index(request):
     # Launch the Landing Page
-    return render(request, "index.html")
+    return render(request, "LandingPage/index.html")
 
 def finish(request):
     # Recieves the parameters and Process and Send Output.
@@ -35,7 +35,7 @@ def finish(request):
     print(depression)
 
 
-    return render(request, 'finish2.html', {'Anxiety': anxiety, 'Depression': depression})
+    return render(request, 'finish.html', {'Anxiety': anxiety, 'Depression': depression})
 
     ## For JSON Output
     # return JsonResponse({'Response' : request.POST.get('your_name')})

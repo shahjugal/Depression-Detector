@@ -1,17 +1,20 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles_form.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles_form.css' %}"/>
     <title>Form</title>
 </head>
 <body>
+    <!-- <div class="image"></div> -->
     <div class="container">
         <form action = "../finish/" method = "POST">
             {% csrf_token %}
-            <h1>Enter patient's details:</h1>
+            <h1>DeMoS (MVP_G3):</h1>
             <table>
                 <tr>
                     <td>Age:</td> 
@@ -28,7 +31,7 @@
                 <tr>
                     <td>Gender:</td> 
                     <td>Male <input type="radio" name="Gender" value="1"></td>
-                    <td>Female: <input type="radio" name="Gender" value="0"></td>
+                    <td>Female <input type="radio" name="Gender" value="0"></td>
                 </tr>
                 <tr>
                     <td>French nationality:</td> 
@@ -193,25 +196,60 @@
                     </td>
                 </tr>     
                 <tr>
-                    <td>Weight (kg): </td>
-                    <td><input type="number" name="weight" id="weight" placeholder="36"></td>
+                    <td>Weight:</td> 
+                    <td>
+                        <select name="weight" id="weight">
+                        <option value="">--Select category of your weight--</option>
+                        <option value="0">38 - 52</option>
+                        <option value="1">53 - 67</option>
+                        <option value="2">68 - 82</option>
+                        <option value="3">83 - 97</option>
+                        <option value="4">98 - 112</option>
+                        <option value="5">113 - 127</option>
+                        <option value="6">128 - 142</option>
+                    </select>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Height (kg): </td>
-                    <td><input type="number" name="height" id="height" placeholder="36"></td>
-                </tr>
+                    <td>Height:</td> 
+                    <td>
+                        <select name="height" id="height">
+                        <option value="">--Select category of your height--</option>
+                        <option value="0">146 - 155</option>
+                        <option value="1">155 - 165</option>
+                        <option value="2">166 - 175</option>
+                        <option value="3">176 - 185</option>
+                        <option value="4">186 - 195</option>
+                        <option value="5">196 - 205</option>
+                    </select>
+                    </td>
+                </tr>   
                 <tr>
                     <td>Overweight and obesity :</td> 
                     <td>Yes <input type="radio" name="overweight" value="1"></td>
                     <td>No <input type="radio" name="overweight" value="0"></td>
                 </tr>
                 <tr>
-                    <td>Systolic blood pressure: </td>
-                    <td><input type="number" name="s_bp" ></td>
-                </tr>
+                    <td>Systolic blood pressure:</td> 
+                    <td>
+                        <select name="s_bp" id="weight">
+                        <option value="">--Select category of Systolic Blood pressure--</option>
+                        <option value="0">8 - 11</option>
+                        <option value="1">12 - 14</option>
+                        <option value="2">15 - 17</option>
+                        </select>
+                    </td>
+                </tr>    
                 <tr>
-                    <td>Diastolic blood pressure: </td>
-                    <td><input type="number" name="d_bp" ></td>
+                    <td>Diastolic blood pressure:</td> 
+                    <td>
+                        <select name="d_bp" id="weight">
+                        <option value="">--Select category of Diastolic Blood pressure--</option>
+                        <option value="0">4 - 6</option>
+                        <option value="1">7 - 9</option>
+                        <option value="2">10 - 13</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
 
@@ -220,8 +258,18 @@
                     <td>No <input type="radio" name="hypertension" value="0"></td>
                 </tr>
                 <tr>
-                    <td>Heart rate: </td>
-                    <td><input type="number" name="heartrate" ></td>
+                    <td>Heart rate:</td> 
+                    <td>
+                        <select name="heartrate" id="weight">
+                        <option value="">--Select category of rate--</option>
+                        <option value="0">40 - 54</option>
+                        <option value="1">55 - 69</option>
+                        <option value="2">70 - 84</option>
+                        <option value="3">85 - 99</option>
+                        <option value="4">100 - 114</option>
+                        <option value="5">115 - 129</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>Abnormal heart rate :</td> 
@@ -325,7 +373,9 @@
                     <td>No <input type="radio" name="o_drugs" value="0"></td>
                 </tr>
             </table>
-            <input type="submit" value="Submit">
+            <div class="submit">
+            <input type="submit" value="Submit" id = "submit_f">
+        </div>
         </form>
     </div>
 </body>
