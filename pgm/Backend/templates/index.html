@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles_form.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container">
+        <form action = "../finish/" method = "POST">
+            {% csrf_token %}
+            <h1>Enter patient's details:</h1>
+            <table>
+                <tr>
+                    <td>Age:</td> 
+                    <td>
+                        <select name="age" id="age_type">
+                        <option value="">--Select your age--</option>
+                        <option value="0">18</option>
+                        <option value="2">20 and more</option>
+                        <option value="1">19</option>
+                        <option value="3">less than 18</option>
+                    </select>
+                    </td>    
+                </tr>    
+                <tr>
+                    <td>Gender:</td> 
+                    <td>Male <input type="radio" name="Gender" value="1"></td>
+                    <td>Female: <input type="radio" name="Gender" value="0"></td>
+                </tr>
+                <tr>
+                    <td>French nationality:</td> 
+                    <td>Yes <input type="radio" name="french_nationality" value="1"></td>
+                    <td>No <input type="radio" name="french_nationality" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Field of study:</td> 
+                    <td>
+                        <select name="study" id="study_type">
+                        <option value="">--Select your Field of study--</option>
+                        <option value="0">humanities</option>
+                        <option value="1">law and political sciences</option>
+                        <option value="2">medicine and allied programs</option>
+                        <option value="4">sciences</option>
+                        <option value="5">sports sciences</option>
+                        <option value="3">other programs</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Year of study:</td> 
+                    <td>
+                        <select name="year" id="year_type">
+                        <option value="">--Select your Year of study--</option>
+                        <option value="0">first</option>
+                        <option value="1">second</option>
+                        <option value="2">third</option>
+                    </select>
+                    </td>
+                </tr>    
+                <tr>
+                    <td>Learning disabilities:</td> 
+                    <td>Yes <input type="radio" name="l_disability" value="1"></td>
+                    <td>No <input type="radio" name="l_disability" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Difficulty memorizing lessons:</td> 
+                    <td>Yes <input type="radio" name="d_mem_lessons" value="1"></td>
+                    <td>No <input type="radio" name="d_mem_lessons" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Professional objective:</td> 
+                    <td>Yes <input type="radio" name="p_objective" value="1"></td>
+                    <td>No <input type="radio" name="p_objective" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Informed about opportunities:</td> 
+                    <td>Yes <input type="radio" name="opportunities" value="1"></td>
+                    <td>No <input type="radio" name="opportunities" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Satistfied with living conditions:</td> 
+                    <td>Yes <input type="radio" name="l_conditions" value="1"></td>
+                    <td>No <input type="radio" name="l_conditions" value="0"></td>
+                </tr>
+                <tr>
+                    <td>living with a partner/child:</td> 
+                    <td>Yes <input type="radio" name="l_partner" value="1"></td>
+                    <td>No <input type="radio" name="l_partner" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Parental home:</td> 
+                    <td>Yes <input type="radio" name="p_home" value="1"></td>
+                    <td>No <input type="radio" name="p_home" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Having only one parent:</td> 
+                    <td>Yes <input type="radio" name="one_parent" value="1"></td>
+                    <td>No <input type="radio" name="one_parent" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Atleast one parent unemployed:</td> 
+                    <td>Yes <input type="radio" name="p_unemployed" value="1"></td>
+                    <td>No <input type="radio" name="p_unemployed" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Siblings:</td> 
+                    <td>Yes <input type="radio" name="siblings" value="1"></td>
+                    <td>No <input type="radio" name="siblings" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Long commute:</td> 
+                    <td>Yes <input type="radio" name="l_commute" value="1"></td>
+                    <td>No <input type="radio" name="l_commute" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Mode of transportation:</td> 
+                    <td>
+                        <select name="m_transport" id="year_type">
+                        <option value="">--Select your Mode of transportation--</option>
+                        <option value="1">Public transportaion</option>
+                        <option value="0">car</option>
+                        <option value="2">On foot</option>
+                    </select>
+                    </td>
+                </tr>     
+                <tr>
+                    <td>Financial difficulties:</td> 
+                    <td>Yes <input type="radio" name="f_difficulties" value="1"></td>
+                    <td>No <input type="radio" name="f_difficulties" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Grant:</td> 
+                    <td>Yes <input type="radio" name="grant" value="1"></td>
+                    <td>No <input type="radio" name="grant" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Additional income:</td> 
+                    <td>Yes <input type="radio" name="a_income" value="1"></td>
+                    <td>No <input type="radio" name="a_income" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Public health insurance :</td> 
+                    <td>Yes <input type="radio" name="public_insurance" value="1"></td>
+                    <td>No <input type="radio" name="public_insurance" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Private health insurance :</td> 
+                    <td>Yes <input type="radio" name="private_insurance" value="1"></td>
+                    <td>No <input type="radio" name="private_insurance" value="0"></td>
+                </tr>
+                <tr>
+                    <td>C.M.U.:</td> 
+                    <td>Yes <input type="radio" name="cmu" value="1"></td>
+                    <td>No <input type="radio" name="cmu" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Irregular rhythm of meals:</td> 
+                    <td>Yes <input type="radio" name="i_meals" value="1"></td>
+                    <td>No <input type="radio" name="i_meals" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Unbalanced meals:</td> 
+                    <td>Yes <input type="radio" name="u_meals" value="1"></td>
+                    <td>No <input type="radio" name="u_meals" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Eating junk food :</td> 
+                    <td>Yes <input type="radio" name="junk_food" value="1"></td>
+                    <td>No <input type="radio" name="junk_food" value="0"></td>
+                </tr>
+                <tr>
+                    <td>On a diet:</td> 
+                    <td>Yes <input type="radio" name="diet" value="1"></td>
+                    <td>No <input type="radio" name="diet" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Irregular rhythm or unbalanced meals :</td> 
+                    <td>Yes <input type="radio" name="i_u_meals" value="1"></td>
+                    <td>No <input type="radio" name="i_u_meals" value="0"></td>
+                </tr>   
+                <tr>
+                    <td>Physical activity(3 levels):</td> 
+                    <td>
+                        <select name="p_activity" id="p_activity_type">
+                        <option value="">--Select type of your Physical activity--</option>
+                        <option value="0">none</option>
+                        <option value="2">Regularly</option>
+                        <option value="1">Ocassionaly</option>
+                    </select>
+                    </td>
+                </tr>     
+                <tr>
+                    <td>Weight:</td> 
+                    <td>
+                        <select name="weight" id="weight">
+                        <option value="">--Select category of your weight--</option>
+                        <option value="0">38 - 52</option>
+                        <option value="1">53 - 67</option>
+                        <option value="2">68 - 82</option>
+                        <option value="3">83 - 97</option>
+                        <option value="4">98 - 112</option>
+                        <option value="5">113 - 127</option>
+                        <option value="6">128 - 142</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Height:</td> 
+                    <td>
+                        <select name="height" id="height">
+                        <option value="">--Select category of your height--</option>
+                        <option value="0">146 - 155</option>
+                        <option value="1">155 - 165</option>
+                        <option value="2">166 - 175</option>
+                        <option value="3">176 - 185</option>
+                        <option value="4">186 - 195</option>
+                        <option value="5">196 - 205</option>
+                    </select>
+                    </td>
+                </tr>   
+                <tr>
+                    <td>Overweight and obesity :</td> 
+                    <td>Yes <input type="radio" name="overweight" value="1"></td>
+                    <td>No <input type="radio" name="overweight" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Systolic blood pressure:</td> 
+                    <td>
+                        <select name="s_bp" id="weight">
+                        <option value="">--Select category of Systolic Blood pressure--</option>
+                        <option value="0">8 - 11</option>
+                        <option value="1">12 - 14</option>
+                        <option value="2">15 - 17</option>
+                        </select>
+                    </td>
+                </tr>    
+                <tr>
+                    <td>Diastolic blood pressure:</td> 
+                    <td>
+                        <select name="d_bp" id="weight">
+                        <option value="">--Select category of Diastolic Blood pressure--</option>
+                        <option value="0">4 - 6</option>
+                        <option value="1">7 - 9</option>
+                        <option value="2">10 - 13</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>Prehypertension or hypertension :</td> 
+                    <td>Yes <input type="radio" name="hypertension" value="1"></td>
+                    <td>No <input type="radio" name="hypertension" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Heart rate:</td> 
+                    <td>
+                        <select name="heartrate" id="weight">
+                        <option value="">--Select category of rate--</option>
+                        <option value="0">40 - 54</option>
+                        <option value="1">55 - 69</option>
+                        <option value="2">70 - 84</option>
+                        <option value="3">85 - 99</option>
+                        <option value="4">100 - 114</option>
+                        <option value="5">115 - 129</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Abnormal heart rate :</td> 
+                    <td>Yes <input type="radio" name="a_heartrate" value="1"></td>
+                    <td>No <input type="radio" name="a_heartrate" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Distant visual acuity of right eye (score /10): </td>
+                    <td><input type="number" name="act_1" ></td>
+                </tr>
+                <tr>
+                    <td>Distant visual acuity of left eye (score /10): </td>
+                    <td><input type="number" name="act_2" ></td>
+                </tr>
+                <tr>
+                    <td>Close visual acuity of right eye (score /10): </td>
+                    <td><input type="number" name="act_3" ></td>
+                </tr>
+                <tr>
+                    <td>Close visual acuity of left eye (score /10): </td>
+                    <td><input type="number" name="act_4" ></td>
+                </tr>
+                <tr>
+                    <td>Decreased in distant visual acuity :</td> 
+                    <td>Yes <input type="radio" name="act_5" value="1"></td>
+                    <td>No <input type="radio" name="act_5" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Decreased in close visual acuity :</td> 
+                    <td>Yes <input type="radio" name="act_6" value="1"></td>
+                    <td>No <input type="radio" name="act_6" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Urinalysis (hematuria) :</td> 
+                    <td>Yes <input type="radio" name="u_h" value="1"></td>
+                    <td>No <input type="radio" name="u_h" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Urinalysis (leukocyturia) :</td> 
+                    <td>Yes <input type="radio" name="u_l" value="1"></td>
+                    <td>No <input type="radio" name="u_l" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Abnormal urinalysis :</td> 
+                    <td>Yes <input type="radio" name="abnormal_u" value="1"></td>
+                    <td>No <input type="radio" name="abnormal_u" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Vaccination up to date :</td> 
+                    <td>Yes <input type="radio" name="vaccine" value="1"></td>
+                    <td>No <input type="radio" name="vaccine" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Control examination needed :</td> 
+                    <td>Yes <input type="radio" name="control_exam" value="1"></td>
+                    <td>No <input type="radio" name="control_exam" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Panic attack symptoms :</td> 
+                    <td>Yes <input type="radio" name="panic_atck" value="1"></td>
+                    <td>No <input type="radio" name="panic_atck" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Cigarette Smoker(5 levels):</td> 
+                    <td>
+                        <select name="c_smoker" id="p_activity_type">
+                        <option value="">--Select level--</option>
+                        <option value="2">none</option>
+                        <option value="4">Regularly</option>
+                        <option value="3">Ocassionaly</option>
+                        <option value="0">frequently</option>
+                        <option value="1">heavily</option>
+                    </select>
+                    </td>
+                </tr>  
+                <tr>
+                    <td>Drinker(3 levels):</td> 
+                    <td>
+                        <select name="drinker" id="p_activity_type">
+                        <option value="">--Select level--</option>
+                        <option value="0">none</option> -->
+                        <option value="2">Regularly</option>
+                        <option value="1">Ocassionaly</option>
+                    </select>
+                    </td>
+                </tr>     
+   
+                <tr>
+                    <td>Binge drinking :</td> 
+                    <td>Yes <input type="radio" name="b_drinking" value="1"></td>
+                    <td>No <input type="radio" name="b_drinking" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Marjiuana use :</td> 
+                    <td>Yes <input type="radio" name="marjiuana" value="1"></td>
+                    <td>No <input type="radio" name="marjiuana" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Other recreational drugs :</td> 
+                    <td>Yes <input type="radio" name="o_drugs" value="1"></td>
+                    <td>No <input type="radio" name="o_drugs" value="0"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
